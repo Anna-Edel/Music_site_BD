@@ -1,5 +1,5 @@
 INSERT INTO Performers (artist_name)
-values
+VALUES
 	('Rihanna'),
 	('Chaykovskiy'),
 	('Nickelback'),
