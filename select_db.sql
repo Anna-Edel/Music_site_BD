@@ -103,11 +103,11 @@ GROUP BY artist_name, duration_track;
 -- названия альбомов, содержащих наименьшее количество треков (вложенными запросами)
 SELECT DISTINCT album_name_ FROM Albums a
 WHERE a.album_id IN (SELECT album_id FROM Tracks
-					GROUP BY album_id
-					HAVING COUNT(*) = (SELECT MIN(cnt) FROM 
-												(SELECT COUNT(*) AS cnt 
-															FROM Tracks 
-															GROUP BY album_id) AS c));
+			GROUP BY album_id
+			HAVING COUNT(*) = (SELECT MIN(cnt) FROM 
+			(SELECT COUNT(*) AS cnt 
+			FROM Tracks 
+			GROUP BY album_id) AS c));
 
 -- названия альбомов, содержащих наименьшее количество треков (объединением таблиц)															
 SELECT album_name_
